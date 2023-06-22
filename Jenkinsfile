@@ -27,6 +27,7 @@ pipeline {
                 sh 'docker push ravicsa12/numeric-app:""$GIT_COMMIT""'
              }
            }
+        }
       stage('K8S Deployment - DEV') {
             steps {
                withKubeConfig([credentialsId: 'kubeconfig']) {
@@ -36,5 +37,4 @@ pipeline {
           }
        }
     }
-}
 }
