@@ -55,7 +55,8 @@ pipeline {
             }
           }
        }
-      post { 
+    }
+  post { 
         always { 
           junit 'target/surefire-reports/*.xml'
           jacoco execPattern: 'target/jacoco.exec'
@@ -63,5 +64,4 @@ pipeline {
           dependencyCheckPublisher pattern: 'target/dependency-check-report.xml'
         }
     }
-}
 }
